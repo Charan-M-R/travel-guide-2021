@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles-bloginsertion.css">
+
+    <title></title>
+  </head>
+  <body>
+    <div class="navigation">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" style="  padding-left: 100px;  padding-right: 600px;" href="/home">Travel Guide</a>
+         <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/destinations"> Destinations</a>
+            </li>
+        </ul>
+     </div>
+    </nav>
+    </div>
+
+    <div style="margin-top: 45px;">
+      <% if(destexists==1){ %>
+        <label style="margin-left: 645px;" for="exampleInputPassword1" class="form-label" style="color: rgb(202, 29, 29);"><b>Destination with the title already exists</b></label>
+        <br>
+      <% } %>
+      </div>
+
+    <div class="border" >
+      <div class="row">
+    <!-- style="width: 300px; margin-left: 325px;" -->
+
+       <!-- // 2nd card -->
+       <div class="col-md-12 column" style="padding-left: 400px;">
+         <form action="/destinationcreate" method="post">
+           <div class="card text-white bg-dark mb-3" style="width: 670px;height: 900px;">
+             <div class="card-body" style="width: 532px;height: 432px;">
+               <div class="row">
+                 <div class="col-md-6">
+                     <p class="card-text"> Destination Name :</p>
+                 </div>
+                 <div class="col-md-6">
+                   <div class="col-md-6">
+                     <input type="text" name="destination" style="width:371px; ">
+                   </div>
+                 </div>
+               </div>
+               <br>
+
+               <div class="row">
+                 <div class="col-md-6">
+                       <p class="card-text"> Location or City :</p>
+                 </div>
+                 <div class="col-md-6">
+                   <div class="col-md-6">
+                     <input type="text" name="location" style="width:371px; ">
+                   </div>
+                 </div>
+               </div>
+               <br>
+
+               <div class="row">
+                 <div class="col-md-6">
+
+                   <p class="card-text"> Entry Fee :</p>
+
+                 </div>
+                  <div class="col-md-6">
+                    <div class="col-md-6">
+                      <input type="text"  name="entry_fee" style="width:371px; " placeholder="if not applicable enter 0">
+                    </div>
+                  </div>
+
+               </div>
+                <br>
+               <div class="row">
+                 <div class="col-md-6">
+                   <p class="card-text"> Phone Number :</p>
+                 </div>
+                 <div class="col-md-6">
+                   <div class="col-md-6">
+                     <input type="text"  name="phone_no" style="width:371px; ">
+                   </div>
+                 </div>
+               </div>
+                <br>
+
+               <div class="row">
+                 <div class="col-md-6">
+                   <p class="card-text">  Google Maps Location :</p>
+                 </div>
+                 <div class="col-md-6">
+                   <div class="col-md-6">
+                        <textarea  name="gmap" style="width: 371px;height: 100px;"></textarea>
+                   </div>
+                 </div>
+               </div>
+                <br>
+
+               <div class="row">
+                 <div class="col-md-6">
+                   <p class="card-text"> Do's and Dont's :</p>
+                 </div>
+                 <div class="col-md-6">
+                   <div class="col-md-6">
+                     <textarea  name="dandd" id="dandd" style="width: 371px;height: 300px;"></textarea>
+                   </div>
+                 </div>
+               </div>
+               <br />
+
+               <div class="row">
+                 <div class="col-md-6">
+                   <p class="card-text"> Restaurants Nearby :</p>
+                 </div>
+                 <div class="col-md-6">
+                   <div class="col-md-6">
+                     <textarea  name="rest" style="width: 371px;height: 100px;"></textarea>
+                   </div>
+                 </div>
+               </div>
+
+               <button  type="submit"  class="btn btn-primary btn-block" style="
+          padding-left: 20px;  padding-top: 10px;  padding-right: 20px;  padding-bottom: 10px;margin-left: 172px;margin-top: 20px;" >Submit</button>
+             </div>
+           </div>
+         </form>
+
+         <form action="/destinations" method="get" style="margin-right: 537px;">
+           <button  type="submit"  class="btn btn-primary btn-block" style="
+      padding-left: 20px;  padding-top: 10px;  padding-right: 20px;  padding-bottom: 10px;margin-left: 172px;margin-top: 20px;" >Back</button>
+         </form>
+       </div>
+
+     <!-- Done -->
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,74 @@
+#top{
+  background-color:  white;
+  margin-top:100px;
+  margin-left: 100px;
+}
+h1{
+  font-size: 60px;
+  text-align: center;
+  padding-top: 20px;
+  font-family: 'Sacramento', cursive;
+  background-color: #E4F9F5;
+
+}
+.navigation{
+  background-color: #5584AC;
+}
+.navbar{
+  padding-bottom: 1.5rem;
+  font-size: 20px;
+  margin-left: auto;
+}
+.navbar-brand{
+  color: white;
+  font-family: "Montserrat";
+  font-size: 40px;
+}
+.nav-item{
+  padding: 0 18px;
+}
+body{
+  background-color: white;
+}
+.card-body{
+  /* background-color:white; */
+}
+.column{
+  text-align: center;
+  padding: 5%;
+  /* margin-bottom: 20px; */
+
+}
+
+.card-img-top{
+  border-radius: 100%;
+}
+
+.top{
+  /* position:relative; */
+  background-color: #11999E;
+padding: 5% 35% ;
+}
+#features{
+  background-color: #E4F9F5;
+  padding: 20px 20px;
+  z-index: 1;
+  position: relative;
+}
+.box1{
+  text-align: center;
+  padding: 5%;
+}
+
+#operations{
+  padding:4% 10%;
+  background-color: #EAEAEA;
+}
+.col{
+
+  margin-bottom: 1rem;
+}
+/* to change icon color on hover */
+.col:hover{
+  color: #11999E;
+}

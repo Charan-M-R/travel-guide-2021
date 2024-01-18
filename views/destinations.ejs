@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles-destinations.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+    <title></title>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+  <div class="navigation" style="padding-left: 70px;">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" style="  padding-left: 100px;  padding-right: 600px;" href="/home">Travel Guide</a>
+       <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+              <a class="nav-link" href="/">Login</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/blogs">Blogs</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/destinations"> Destinations</a>
+          </li>
+      </ul>
+   </div>
+  </nav>
+
+  <div class=" row row2 " style="
+      padding-bottom: 30px;
+      padding-top: 10px;">
+    <div class="col-md-4"  style="
+    margin-left: 329px;">
+      <form action="/destinations" method="post">
+        <div class="input-group">
+          <input type="search" name="search1" class="form-control rounded" placeholder="Search by location/city" aria-label="Search"
+          aria-describedby="search-addon" />
+          <button  class="btn btn-dark">Search</button>
+        </div>
+      </form>
+
+    </div>
+    <div class="col-md-4" style="padding-right: 350px;">
+      <form action="/destinationcreate" method="get">
+        <button  class="create btn btn-dark">Create Custom Destination</button>
+      </form>
+    </div>
+    </div>
+  </div>
+  <!-- END OF NAVBAR -->
+
+  <% let ref=""  %>
+  <% for (let i = 0; i < Math.floor(destinations.length/2); i++) { %>
+  <section id="blogs" style="margin-left: 200px;">
+<div class ="row">
+
+
+  <div class="col-md-6"  >
+    <div class="card text-light bg-dark mb-3" style="max-width: 18rem;">
+      <div class="card-header">Destination Name : <%= destinations[i*2+0]['destination'] %></div>
+        <!-- <div class="card-header">Date :</div> -->
+      <div class="card-body">
+        <p class="card-text"> Location : <%= destinations[i*2+0]['location'] %></p>
+        <p class="card-text"> Entry Fee : <%= destinations[i*2+0]['entry_fee'] %></p>
+        <p class="card-text"> Phone Number : <%= destinations[i*2+0]['phone_no'] %></p>
+        <!-- <h5 class="card-title">Blog Location :</h5> -->
+        <% text = destinations[i*2+0]['destination'].replace(/ /g, "_");%>
+        <% ref = "/destinations/" + text %>
+        <a href=<%= ref %> class="btn btn-primary btn-block">Read More</a>
+        <!-- <p class="card-text"> CONTENT Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6"  >
+    <div class="card text-light bg-dark mb-3" style="max-width: 18rem;">
+      <div class="card-header">Destination Name : <%= destinations[i*2+1]['destination'] %></div>
+        <!-- <div class="card-header">Date :</div> -->
+      <div class="card-body">
+        <p class="card-text"> Location : <%= destinations[i*2+1]['location'] %></p>
+        <p class="card-text"> Entry Fee : <%= destinations[i*2+1]['entry_fee'] %></p>
+        <p class="card-text"> Phone Number : <%= destinations[i*2+1]['phone_no'] %></p>
+        <!-- <h5 class="card-title">Blog Location :</h5> -->
+        <% text = destinations[i*2+1]['destination'].replace(/ /g, "_");%>
+        <% ref = "/destinations/" + text %>
+        <a href=<%= ref %> class="btn btn-primary btn-block">Read More</a>
+        <!-- <p class="card-text"> CONTENT Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+
+      </div>
+    </div>
+  </div>
+  </div>
+  </section>
+
+  <%}%>
+
+  <%if(destinations.length%2==1){%>
+    <section id="blogs" style="margin-left: 200px;">
+  <div class ="row">
+  <div class="col-md-6"  >
+    <div class="card text-light bg-dark mb-3" style="max-width: 18rem;">
+      <div class="card-header">Destination Name : <%= destinations[destinations.length-1]['destination'] %></div>
+        <!-- <div class="card-header">Date :</div> -->
+      <div class="card-body">
+        <p class="card-text"> Location : <%= destinations[destinations.length-1]['location'] %></p>
+          <p class="card-text"> Entry Fee : <%= destinations[destinations.length-1]['entry_fee'] %></p>
+          <p class="card-text"> Phone Number : <%= destinations[destinations.length-1]['phone_no'] %></p>
+        <!-- <h5 class="card-title">Blog Location :</h5> -->
+        <% text = destinations[destinations.length-1]['destination'].replace(/ /g, "_");%>
+        <% ref = "/destinations/" + text %>
+        <a href=<%= ref %> class="btn btn-primary btn-block">Read More</a>
+        <!-- <p class="card-text"> CONTENT Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+
+      </div>
+    </div>
+  </div>
+  </div>
+  </section>
+  <%}%>
+  </body>
+</html>
